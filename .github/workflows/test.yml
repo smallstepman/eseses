@@ -1,0 +1,17 @@
+name: "chore"
+on: 
+  workflow_dispatch:
+    inputs:
+      updateNnsCanisters:
+        description: 'ya'
+        type: boolean
+        default: true
+
+jobs:
+  update-replica:
+    runs-on: ubuntu-latest
+    steps:
+    - name: install dfx
+      uses: mmicu/sdk
+      with: 
+        dfx-version: "0.14.2-beta.1" 
