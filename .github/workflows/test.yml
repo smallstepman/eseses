@@ -15,3 +15,6 @@ jobs:
       uses: mmicu/sdk@master
       with: 
         dfx-version: "0.14.2-beta.1" 
+
+    - name: see if it workde
+      run: dfx --version
