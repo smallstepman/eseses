@@ -11,10 +11,7 @@ jobs:
   update-replica:
     runs-on: ubuntu-latest
     steps:
-    - name: install dfx
-      uses: mmicu/sdk@master
-      with: 
-        dfx-version: "0.14.2-beta.1" 
-
-    - name: see if it workde
-      run: dfx --version
+    - name: work?
+      run: |
+        echo "cece" > xyyx
+        shasum -a 256 xyyx
