@@ -2,16 +2,18 @@ name: "chore"
 on: 
   workflow_dispatch:
     inputs:
-      updateNnsCanisters:
-        description: 'ya'
+      something:
+        description: 'unused'
         type: boolean
         default: true
 
 jobs:
-  update-replica:
-    runs-on: ubuntu-latest
+  test-extension:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ macos-12, ubuntu-22.04, windows-latest ]
     steps:
-    - name: work?
-      run: |
-        echo "cece" > xyyx
-        shasum -a 256 xyyx
+      - uses: smallstepman/cargo-binstall@main
+      - run: cargo binstall ripgrep
+      - run: rg --help
