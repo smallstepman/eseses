@@ -15,5 +15,5 @@ jobs:
         os: [ macos-12, ubuntu-22.04, windows-latest ]
     steps:
       - uses: smallstepman/cargo-binstall@main
-      - run: cargo binstall ripgrep
+      - run: cargo binstall -y ripgrep
       - run: rg --help
