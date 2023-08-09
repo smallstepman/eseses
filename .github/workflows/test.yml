@@ -1,11 +1,5 @@
 name: "chore"
-on: 
-  workflow_dispatch:
-    inputs:
-      something:
-        description: 'unused'
-        type: boolean
-        default: true
+on: workflow_dispatch
 
 jobs:
   test-extension:
