@@ -1,13 +1,20 @@
 name: "chore"
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+    inputs:
+      updateNnsCanisters:
+        description: 'ya'
+        type: boolean
+        default: true
 
 jobs:
-  test-extension:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ macos-12, ubuntu-22.04, windows-latest ]
+  update-replica:
+    runs-on: ubuntu-latest
     steps:
-      - uses: smallstepman/cargo-binstall@main
-      - run: cargo binstall -y ripgrep
-      - run: rg --help
+    - name: install dfx
+      uses: mmicu/sdk@master
+      env: 
+        DFX_VERSION: "0.14.2-beta.1" 
+
+    - name: see if it worked
+      run: dfx --version
