@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: install dfx
-      uses: mmicu/sdk@master
+      uses: mmicu/sdk@dfx-action
       env: 
         DFX_VERSION: "0.14.2-beta.1" 
 
